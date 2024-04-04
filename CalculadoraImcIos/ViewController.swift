@@ -14,12 +14,16 @@ class ViewController: UIViewController {
     @IBOutlet var weightResult: UILabel!
     @IBOutlet var calculateResult: UILabel!
     @IBOutlet var stepperOutlet: UIStepper!
+    @IBOutlet var resultMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Initialization of the value of the stepper
         stepperOutlet.value = 80
+        
+        // Empty result message
+        resultMessage.text = ""
     }
     
     // Display on the height result text the value of the slider without decimals
@@ -46,6 +50,22 @@ class ViewController: UIViewController {
         
         // Print on console the result with all the decimals
         print("IMC: \(calculateResultDouble)")
+        
+        switch Float(calculateResult.text!)! {
+        case ..<18.5 :
+            resultMessage.text = "Underweight"
+            resultMessage.textColor = UIColor.orange
+        case 18.5...24.9 :
+            resultMessage.text = "Healthy Weight"
+            resultMessage.textColor = UIColor.green
+        case 25...29.9 :
+            resultMessage.text = "Overweight"
+            resultMessage.textColor = UIColor.orange
+        case 30... :
+            resultMessage.text = "Obesity"
+            resultMessage.textColor = UIColor.red
+        default:
+            resultMessage.text = ""
+        }
     }
 }
-
