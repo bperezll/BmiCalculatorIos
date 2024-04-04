@@ -42,10 +42,10 @@ class ViewController: UIViewController {
         let heightResultDouble = Double(heightResult.text!)!
         let weightResultDouble = Double(weightResult.text!)!
         
-        // Constant variable to calculate te BMI
+        // Constant variable to calculate the BMI
         let calculateResultDouble = weightResultDouble / ((heightResultDouble / 100) * (heightResultDouble / 100))
         
-        // Show the result of the BMI calculation with only one decimal
+        // Show the result of the BMI calculation as a string with only one decimal
         calculateResult.text = (String(format:"%.01f", calculateResultDouble))
         
         // Print on console the result with all the decimals
