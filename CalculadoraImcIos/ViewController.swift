@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         // Print on console the result with all the decimals
         print("IMC: \(calculateResultDouble)")
         
+        // Display different result message and text color depending on result
         switch Float(calculateResult.text!)! {
         case ..<18.5 :
             resultMessage.text = "Underweight"
